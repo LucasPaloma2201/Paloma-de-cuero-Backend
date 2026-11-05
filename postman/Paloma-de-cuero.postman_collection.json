@@ -1,0 +1,173 @@
+{
+  "info": {
+    "name": "Paloma de cuero",
+    "description": "Colección del Trabajo Práctico N.º 9. Los endpoints responden con el texto que genera Nest.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000"
+    }
+  ],
+  "item": [
+    {
+      "name": "App",
+      "item": [
+        {
+          "name": "Estado de la API",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/" }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Listar productos",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/products" }
+        },
+        {
+          "name": "Ver producto",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/products/1" }
+        },
+        {
+          "name": "Crear producto",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Bandolera\",\n  \"descripcion\": \"Bandolera de cuero hecha a mano\",\n  \"precio\": 64000,\n  \"stock\": 4\n}"
+            },
+            "url": "{{baseUrl}}/products"
+          }
+        },
+        {
+          "name": "Actualizar producto",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"stock\": 5\n}" },
+            "url": "{{baseUrl}}/products/1"
+          }
+        },
+        {
+          "name": "Eliminar producto",
+          "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/products/1" }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Listar usuarios",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/users" }
+        },
+        {
+          "name": "Ver usuario",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/users/1" }
+        },
+        {
+          "name": "Crear usuario",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Ana Sosa\",\n  \"email\": \"ana.sosa@email.com\",\n  \"password\": \"cliente123\",\n  \"rol\": \"cliente\"\n}"
+            },
+            "url": "{{baseUrl}}/users"
+          }
+        },
+        {
+          "name": "Actualizar usuario",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Ana María Sosa\"\n}" },
+            "url": "{{baseUrl}}/users/2"
+          }
+        },
+        {
+          "name": "Eliminar usuario",
+          "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/users/2" }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Listar pedidos",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/orders" }
+        },
+        {
+          "name": "Ver pedido",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/orders/1" }
+        },
+        {
+          "name": "Crear pedido",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 2,\n  \"fecha\": \"2026-11-05\",\n  \"estado\": \"pendiente\",\n  \"total\": 28000\n}"
+            },
+            "url": "{{baseUrl}}/orders"
+          }
+        },
+        {
+          "name": "Actualizar pedido",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"estado\": \"pagado\"\n}" },
+            "url": "{{baseUrl}}/orders/1"
+          }
+        },
+        {
+          "name": "Eliminar pedido",
+          "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/orders/1" }
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Listar auth",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/auth" }
+        },
+        {
+          "name": "Ver auth",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/auth/1" }
+        },
+        {
+          "name": "Crear auth",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{}" },
+            "url": "{{baseUrl}}/auth"
+          }
+        },
+        {
+          "name": "Actualizar auth",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{}" },
+            "url": "{{baseUrl}}/auth/1"
+          }
+        },
+        {
+          "name": "Eliminar auth",
+          "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/auth/1" }
+        }
+      ]
+    }
+  ]
+}
